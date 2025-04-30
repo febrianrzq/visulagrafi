@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teknik Videografi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+    }
+
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".neon-box").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --text: #e0e0e0;
+      --primary: #00ffff;
+      --neon: #00ffff88;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      --bg: #ffffff;
+      --text: #111;
+      --primary: #0077ff;
+      --neon: #0077ff44;
+    }
+
+    header, footer {
+      background-color: #111;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 6px 15px;
+      margin-top: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: var(--primary);
+      color: black;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: var(--primary);
+    }
+
+    .neon-box {
+      background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+      border: 1px solid var(--neon);
+      box-shadow: 0 0 20px var(--neon);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+    }
+
+    .neon-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer p {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Teknik Videografi</h1>
+    <nav>
+      <a href="index.html">Videografi</a>
+      <a href="fotografi.html">Fotografi</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleMode()">Ganti Mode</button>
+  </header>
+
+  <section>
+    <h2>Dasar-Dasar Videografi</h2>
+    <div class="neon-box">
+      <p>Videografi adalah seni dan teknik pengambilan gambar bergerak. Beberapa hal penting yang perlu dipelajari antara lain:</p>
+      <ul>
+        <li>Frame rate dan resolusi</li>
+        <li>Komposisi dan pencahayaan</li>
+        <li>Teknik pengambilan gambar (pan, tilt, zoom)</li>
+        <li>Editing video dan transisi</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Teknik Video & Foto oleh @febrianrzq</p>
+  </footer>
+</body>
+</html>
